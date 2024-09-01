@@ -8,6 +8,8 @@
     --background-color: #fbfbfb;
     --title-color: #3d3d3d;
     --text-color: #727272;
+    --placeholder-color: #a5a5a5;
+    --placeholder-border: #eaeaea;
 }
 
 body {
@@ -29,6 +31,8 @@ body {
     --background-color: #dfcbcb;
     --title-color: white;
     --text-color: rgb(238, 160, 13);
+    --placeholder-color: rgb(238, 160, 13);
+    --placeholder-border: rgb(238, 160, 13);
 }
 
 h1 {
