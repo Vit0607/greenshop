@@ -6,12 +6,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home/Home.tsx';
 import { Cart } from './pages/Cart/Cart.tsx';
 import { Error } from './pages/Error/Error.tsx';
-import { Layout } from './layout/Layout.tsx';
+import { Header } from './layout/Header/Header.tsx';
+import { PlantCare } from './pages/PlantCare/PlantCare.tsx';
+import { Shop } from './pages/Shop/Shop.tsx';
+import { Blogs } from './pages/Blogs/Blogs.tsx';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Header />,
         children: [
             {
                 path: '/',
@@ -20,6 +23,18 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart />
+            },
+            {
+                path: '/shop',
+                element: <Shop />
+            },
+            {
+                path: '/care',
+                element: <PlantCare />
+            },
+            {
+                path: '/blogs',
+                element: <Blogs />
             }
         ]
     },
