@@ -41,8 +41,9 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    margin-bottom: -9px;
 }
 
 .logo {
-    margin-bottom: -9px;
+    margin-bottom: -5px;
 }

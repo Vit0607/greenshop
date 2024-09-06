@@ -3,7 +3,7 @@ import Headling from '../../components/Headling/Headling';
 export function Home() {
     return (
         <>
-            <Headling className="h1">
+            <Headling>
                 Let's make a better <span>planet</span>
             </Headling>
             <Headling level={2} classLevel={2}>

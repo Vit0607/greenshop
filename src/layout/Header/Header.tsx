@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import styles from './Header.module.css';
 import Button from '../../components/Button/Button';
 import cn from 'classnames';
+import SearchInput from '../../components/Search/Search';
 
 export function Header() {
     return (
@@ -47,9 +48,7 @@ export function Header() {
                     </NavLink>
                 </div>
                 <div className={styles['header-icons']}>
-                    <Link to="/" className={styles['search']}>
-                        <img src="/icons/search-icon.svg" alt="Иконка поиска" />
-                    </Link>
+                    <SearchInput placeholder="Enter the plant..." />
                     <Link to="/" className={styles['cart-icon']}>
                         <img src="/icons/cart-icon.svg" alt="Иконка корзины" />
                     </Link>
