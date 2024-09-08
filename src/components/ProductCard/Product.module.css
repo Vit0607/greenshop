@@ -1,0 +1,104 @@
+.link {
+    width: 258px;
+    display: block;
+    text-decoration: none;
+}
+
+.head {
+    position: relative;
+    min-height: 300px;
+    border: 1px solid var(--placeholder-border);
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
+}
+
+.link:hover .head {
+    border-top: 1px solid var(--primary-color);
+    transition: all 0.3s;
+}
+
+.footer {
+    padding: 10px 0;
+}
+
+.title {
+    color: var(--title-color);
+    margin-bottom: 5px;
+}
+
+.price {
+    display: flex;
+    gap: 15px;
+}
+
+.current-price {
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.old-price {
+    font-size: 18px;
+    color: var(--placeholder-color);
+    line-height: 16px;
+    text-decoration: line-through;
+}
+
+.icons {
+    display: flex;
+    gap: 7px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -19%);
+    z-index: 2;
+    display: none;
+}
+
+.link:hover .icons {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border: 1px solid var(--placeholder-border);
+    border-radius: 4px;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.icon:hover {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.icon:hover svg {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    transition: fill 0.3s ease-in-out;
+}
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.discount {
+    padding: 4px 10px;
+    background-color: var(--primary-color);
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}

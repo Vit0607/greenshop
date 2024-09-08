@@ -45,12 +45,9 @@ function SearchInput({ className, ...props }: SearchProps) {
                     ref={inputRef} // Присваиваем ref инпуту
                 />
             )}
-            <img
-                src="/icons/search-icon.svg"
-                className={styles['search-icon']}
-                onClick={toggleSearchInput}
-                alt="Иконка поиска"
-            />
+            <svg className={styles['search-icon']} onClick={toggleSearchInput}>
+                <use href="/icons/search-icon.svg#search"></use>
+            </svg>
         </div>
     );
 }

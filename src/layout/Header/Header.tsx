@@ -49,8 +49,10 @@ export function Header() {
                 </div>
                 <div className={styles['header-icons']}>
                     <SearchInput placeholder="Enter the plant..." />
-                    <Link to="/" className={styles['cart-icon']}>
-                        <img src="/icons/cart-icon.svg" alt="Иконка корзины" />
+                    <Link to="/">
+                        <svg className={styles['cart-icon']}>
+                            <use href="/icons/cart-icon.svg#cart"></use>
+                        </svg>
                     </Link>
                     <Link to="/login">
                         <Button>
