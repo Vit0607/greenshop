@@ -3,22 +3,31 @@ import Headling from '../../components/Headling/Headling';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { PREFIX } from '../../helpers/API';
 import { Product } from '../../interfaces/product.interface';
+import axios from 'axios';
 
 export function Home() {
     const [products, setProducts] = useState<Product[]>([]);
 
     const getProducts = async () => {
         try {
-            const res = await fetch(`${PREFIX}/plants`);
-            if (!res.ok) {
-                return;
-            }
-            const data = (await res.json()) as Product[];
+            const { data } = await axios.get<Product[]>(`${PREFIX}/plants`);
             setProducts(data);
         } catch (e) {
             console.error(e);
             return;
         }
+
+        // try {
+        //     const res = await fetch(`${PREFIX}/plants`);
+        //     if (!res.ok) {
+        //         return;
+        //     }
+        //     const data = (await res.json()) as Product[];
+        //     setProducts(data);
+        // } catch (e) {
+        //     console.error(e);
+        //     return;
+        // }
     };
 
     useEffect(() => {
