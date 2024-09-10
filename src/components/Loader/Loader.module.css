@@ -1,0 +1,21 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Высота загрузчика */
+}
+
+.spinner {
+    border: 8px solid var(--placeholder-border);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
