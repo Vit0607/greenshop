@@ -1,7 +1,30 @@
+import { useEffect, useState } from 'react';
 import Headling from '../../components/Headling/Headling';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import { PREFIX } from '../../helpers/API';
+import { Product } from '../../interfaces/product.interface';
 
 export function Home() {
+    const [products, setProducts] = useState<Product[]>([]);
+
+    const getProducts = async () => {
+        try {
+            const res = await fetch(`${PREFIX}/plants`);
+            if (!res.ok) {
+                return;
+            }
+            const data = (await res.json()) as Product[];
+            setProducts(data);
+        } catch (e) {
+            console.error(e);
+            return;
+        }
+    };
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
     return (
         <>
             <Headling>
@@ -12,13 +35,16 @@ export function Home() {
             </Headling>
             <Headling classLevel={3}>Barberton Daisy</Headling>
             <div>
-                <ProductCard
-                    id={1}
-                    title="Angel Wing Begonia"
-                    price={199}
-                    oldPrice={229}
-                    image="/images/plant2.png"
-                />
+                {products.map(p => (
+                    <ProductCard
+                        key={p.id}
+                        id={p.id}
+                        name={p.name}
+                        price={p.price}
+                        oldPrice={p.oldPrice}
+                        image={p.image}
+                    />
+                ))}
             </div>
         </>
     );

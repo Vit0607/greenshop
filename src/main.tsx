@@ -9,6 +9,7 @@ import { Header } from './layout/Header/Header.tsx';
 import { PlantCare } from './pages/PlantCare/PlantCare.tsx';
 import { Shop } from './pages/Shop/Shop.tsx';
 import { Blogs } from './pages/Blogs/Blogs.tsx';
+import { Product } from './pages/Product/Product.tsx';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs />
+            },
+            {
+                path: '/product/:id',
+                element: <Product />
             }
         ]
     },
