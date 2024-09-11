@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import Headling from '../../components/Headling/Headling';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import { PREFIX } from '../../helpers/API';
 import { Product } from '../../interfaces/product.interface';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import Loader from '../../components/Loader/Loader';
+import { PlantsList } from './PlantsList/PlantsList';
 
 export function Home() {
     const [products, setProducts] = useState<Product[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | undefined>();
 
     const getProducts = async () => {
         try {
@@ -23,6 +24,9 @@ export function Home() {
             setIsLoading(false);
         } catch (e) {
             console.error(e);
+            if (e instanceof AxiosError) {
+                setError(e.message);
+            }
             setIsLoading(false);
             return;
         }
@@ -54,17 +58,8 @@ export function Home() {
             </Headling>
             <Headling classLevel={3}>Barberton Daisy</Headling>
             <div>
-                {!isLoading &&
-                    products.map(p => (
-                        <ProductCard
-                            key={p.id}
-                            id={p.id}
-                            name={p.name}
-                            price={p.price}
-                            oldPrice={p.oldPrice}
-                            image={p.image}
-                        />
-                    ))}
+                {error && <>{error}</>}
+                {!isLoading && <PlantsList products={products} />}
                 {isLoading && <Loader />}
             </div>
         </>
