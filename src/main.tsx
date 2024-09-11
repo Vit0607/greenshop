@@ -10,6 +10,8 @@ import { PlantCare } from './pages/PlantCare/PlantCare.tsx';
 import { Shop } from './pages/Shop/Shop.tsx';
 import { Blogs } from './pages/Blogs/Blogs.tsx';
 import { Product } from './pages/Product/Product.tsx';
+import axios from 'axios';
+import { PREFIX } from './helpers/API.ts';
 
 const router = createBrowserRouter([
     {
@@ -38,7 +40,18 @@ const router = createBrowserRouter([
             },
             {
                 path: '/product/:id',
-                element: <Product />
+                element: <Product />,
+                loader: async ({ params }) => {
+                    await new Promise<void>(resolve => {
+                        setTimeout(() => {
+                            resolve();
+                        }, 2000);
+                    });
+                    const { data } = await axios.get(
+                        `${PREFIX}/plants/${params.id}`
+                    );
+                    return data;
+                }
             }
         ]
     },
