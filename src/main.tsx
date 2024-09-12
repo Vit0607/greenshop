@@ -1,10 +1,9 @@
-import { StrictMode } from 'react';
+import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home } from './pages/Home/Home.tsx';
 import { Cart } from './pages/Cart/Cart.tsx';
-import { Error } from './pages/Error/Error.tsx';
+import { Error as ErrorPage } from './pages/Error/Error.tsx';
 import { Header } from './layout/Header/Header.tsx';
 import { PlantCare } from './pages/PlantCare/PlantCare.tsx';
 import { Shop } from './pages/Shop/Shop.tsx';
@@ -12,6 +11,9 @@ import { Blogs } from './pages/Blogs/Blogs.tsx';
 import { Product } from './pages/Product/Product.tsx';
 import axios from 'axios';
 import { PREFIX } from './helpers/API.ts';
+import Loader from './components/Loader/Loader.tsx';
+
+const Home = lazy(() => import('./pages/Home/Home.tsx'));
 
 const router = createBrowserRouter([
     {
@@ -20,7 +22,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: (
+                    <Suspense fallback={<Loader />}>
+                        <Home />
+                    </Suspense>
+                )
             },
             {
                 path: '/cart',
@@ -41,6 +47,7 @@ const router = createBrowserRouter([
             {
                 path: '/product/:id',
                 element: <Product />,
+                errorElement: <>Ошибка</>,
                 loader: async ({ params }) => {
                     await new Promise<void>(resolve => {
                         setTimeout(() => {
@@ -48,7 +55,7 @@ const router = createBrowserRouter([
                         }, 2000);
                     });
                     const { data } = await axios.get(
-                        `${PREFIX}/plants/${params.id}`
+                        `${PREFIX}/plantts/${params.id}`
                     );
                     return data;
                 }

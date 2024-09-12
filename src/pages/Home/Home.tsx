@@ -25,18 +25,6 @@ export function Home() {
             setIsLoading(false);
             return;
         }
-
-        // try {
-        //     const res = await fetch(`${PREFIX}/plants`);
-        //     if (!res.ok) {
-        //         return;
-        //     }
-        //     const data = (await res.json()) as Product[];
-        //     setProducts(data);
-        // } catch (e) {
-        //     console.error(e);
-        //     return;
-        // }
     };
 
     useEffect(() => {
@@ -60,3 +48,5 @@ export function Home() {
         </>
     );
 }
+
+export default Home;

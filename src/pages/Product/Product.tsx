@@ -1,8 +1,8 @@
 import { useLoaderData } from 'react-router-dom';
-import { Product } from '../../interfaces/product.interface';
+import { Product as Pr } from '../../interfaces/product.interface';
 
 export function Product() {
-    const data = useLoaderData() as Product;
+    const data = useLoaderData() as Pr;
 
     return <>Product - {data.name}</>;
 }
