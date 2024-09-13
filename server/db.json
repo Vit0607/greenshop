@@ -152,7 +152,7 @@
             "category": "House Plants",
             "sale": true,
             "newArrival": true,
-            "image": "/images/plant5.png"
+            "image": "/images/plant9.png"
         },
         {
             "id": "15",
@@ -196,7 +196,7 @@
             "category": "House Plants",
             "sale": false,
             "newArrival": false,
-            "image": "/images/plant1.png"
+            "image": "/images/plant5.png"
         },
         {
             "id": "19",
@@ -207,7 +207,7 @@
             "category": "House Plants",
             "sale": false,
             "newArrival": false,
-            "image": "/images/plant1.png"
+            "image": "/images/plant5.png"
         },
         {
             "id": "20",
@@ -251,7 +251,7 @@
             "category": "Succulents",
             "sale": false,
             "newArrival": false,
-            "image": "/images/plant5.png"
+            "image": "/images/plant1.png"
         },
         {
             "id": "24",
@@ -350,7 +350,7 @@
             "category": "Terrariums",
             "sale": false,
             "newArrival": true,
-            "image": "/images/plant5.png"
+            "image": "/images/plant9.png"
         },
         {
             "id": "33",
@@ -394,7 +394,7 @@
             "category": "Gardening",
             "sale": false,
             "newArrival": false,
-            "image": "/images/plant1.png"
+            "image": "/images/plant5.png"
         },
         {
             "id": "37",
@@ -405,7 +405,7 @@
             "category": "Gardening",
             "sale": true,
             "newArrival": true,
-            "image": "/images/plant1.png"
+            "image": "/images/plant5.png"
         },
         {
             "id": "38",
@@ -449,7 +449,7 @@
             "category": "Accessories",
             "sale": false,
             "newArrival": false,
-            "image": "/images/plant5.png"
+            "image": "/images/plant1.png"
         },
         {
             "id": "42",
