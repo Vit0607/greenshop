@@ -1,4 +1,4 @@
-import styles from './Pagination.module.css';
+import styles from './Pagination.module.scss';
 import { PaginationProps } from './Pagination.props';
 import cn from 'classnames';
 
@@ -60,7 +60,7 @@ const Pagination = ({
     return paginationButtons;
   };
 
-  return <div>{renderPagination()}</div>;
+  return <div className={styles.pagination}>{renderPagination()}</div>;
 };
 
 export default Pagination;
