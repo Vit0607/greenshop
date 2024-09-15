@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Headling from '../../components/Headling/Headling';
+import Headling from '../../components/ui/Headling/Headling';
 import { PREFIX } from '../../helpers/API';
-import { Product } from '../../interfaces/product.interface';
+import { Product } from '../../types/product.interface';
 import axios, { AxiosError } from 'axios';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/ui/Loader/Loader';
 import { PlantsList } from './PlantsList/PlantsList';
 import Pagination from './Pagination/Pagination';
 // import styles from './Home.module.css';

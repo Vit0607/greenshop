@@ -1,5 +1,5 @@
-import { Product } from '../../../interfaces/product.interface';
+import { Product } from '../../../types/product.interface';
 
 export interface PlantsListProps {
-    products: Product[];
+  products: Product[];
 }

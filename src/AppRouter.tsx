@@ -2,14 +2,14 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, defer, RouterProvider } from 'react-router-dom';
 import { Cart } from './pages/Cart/Cart.tsx';
 import { Error as ErrorPage } from './pages/Error/Error.tsx';
-import { Header } from './layout/Header/Header.tsx';
+import { Header } from './components/shared/Header/Header.tsx';
 import { PlantCare } from './pages/PlantCare/PlantCare.tsx';
 import { Shop } from './pages/Shop/Shop.tsx';
 import { Blogs } from './pages/Blogs/Blogs.tsx';
 import { Product } from './pages/Product/Product.tsx';
 import axios from 'axios';
 import { PREFIX } from './helpers/API.ts';
-import Loader from './components/Loader/Loader.tsx';
+import Loader from './components/ui/Loader/Loader.tsx';
 
 const Home = lazy(() => import('./pages/Home/Home.tsx'));
 
