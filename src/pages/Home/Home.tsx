@@ -104,6 +104,8 @@ function Home() {
   //   return paginationButtons;
   // };
 
+  console.log(import.meta.env.REACT_APP_BASE_API_URL);
+
   return (
     <>
       <Headling>
