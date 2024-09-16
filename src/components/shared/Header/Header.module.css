@@ -1,54 +1,58 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 0.3px solid rgba(70, 163, 88, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.3px solid rgba(70, 163, 88, 0.3);
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .link {
-    color: var(--title-color);
-    text-decoration: none;
-    padding: 30px 0 23px;
-    border-bottom: 2px solid transparent;
+  color: var(--title-color);
+  text-decoration: none;
+  padding: 30px 0 23px;
+  border-bottom: 2px solid transparent;
+  display: block;
 }
 
 .link:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .link.active {
-    font-weight: bold;
-    border-bottom: 2px solid var(--primary-color);
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .link.active:hover {
-    color: var(--title-color);
-    cursor: initial;
+  color: var(--title-color);
+  cursor: initial;
 }
 
 .login-icon {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .header-icons {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: -9px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: -9px;
 }
 
 .logo {
-    margin-bottom: -5px;
+  margin-bottom: -5px;
 }
 
 .cart-icon {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }

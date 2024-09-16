@@ -3,6 +3,7 @@ import styles from './Header.module.css';
 import Button from '../../../components/ui/Button/Button';
 import cn from 'classnames';
 import SearchInput from '../Search/Search';
+import { linksMenuEn } from '../../../constants/links';
 
 export function Header() {
   return (
@@ -11,42 +12,20 @@ export function Header() {
         <Link to="/" className={styles['logo']}>
           <img src="/icons/logo.svg" alt="Логотип" />
         </Link>
-        <div className={styles['menu']}>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              cn(styles['link'], { [styles.active]: isActive })
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/shop"
-            className={({ isActive }) =>
-              cn(styles['link'], {
-                [styles.active]: isActive
-              })
-            }
-          >
-            Shop
-          </NavLink>
-          <NavLink
-            to="/care"
-            className={({ isActive }) =>
-              cn(styles['link'], { [styles.active]: isActive })
-            }
-          >
-            Plant Care
-          </NavLink>
-          <NavLink
-            to="/blogs"
-            className={({ isActive }) =>
-              cn(styles['link'], { [styles.active]: isActive })
-            }
-          >
-            Blogs
-          </NavLink>
-        </div>
+        <ul className={styles['menu']}>
+          {linksMenuEn.map(item => (
+            <li key={item.link}>
+              <NavLink
+                to={item.link}
+                className={({ isActive }) =>
+                  cn(styles['link'], { [styles.active]: isActive })
+                }
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
         <div className={styles['header-icons']}>
           <SearchInput placeholder="Enter the plant..." />
           <Link to="/">
