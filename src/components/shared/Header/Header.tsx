@@ -4,8 +4,21 @@ import Button from '../../../components/ui/Button/Button';
 import cn from 'classnames';
 import SearchInput from '../Search/Search';
 import { linksMenuEn } from '../../../constants/links';
+import Modal from '../Modal/Modal';
+import { useState } from 'react';
+import { on } from 'events';
 
 export function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const onClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const onOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <div className={styles['header']}>
@@ -33,17 +46,21 @@ export function Header() {
               <use href="/icons/cart-icon.svg#cart"></use>
             </svg>
           </Link>
-          <Link to="/login">
-            <Button>
-              <img
-                src="/icons/login-icon.svg"
-                alt="Иконка входа"
-                className={styles['login-icon']}
-              />
-              Login
-            </Button>
-          </Link>
+          <Button onClick={onOpenModal}>
+            <img
+              src="/icons/login-icon.svg"
+              alt="Иконка входа"
+              className={styles['login-icon']}
+            />
+            Login
+          </Button>
         </div>
+        {isModalOpen && (
+          <Modal onClose={onClose}>
+            <h2>Заголовок модадки</h2>
+            <p>Содержимое модалки</p>
+          </Modal>
+        )}
       </div>
       <div>
         <Outlet />
