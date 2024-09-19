@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import styles from './AuthLayout.module.scss';
 import Headling from '../../components/ui/Headling/Headling';
+import { Login } from '../../components/shared/Login/Login';
 
 export function AuthLayout() {
   return (
@@ -14,7 +15,9 @@ export function AuthLayout() {
           Register
         </Headling>
       </div>
-      <div className={styles.content}>{/* <Outlet /> */}</div>
+      <div className={styles.content}>
+        <Login />
+      </div>
     </div>
   );
 }

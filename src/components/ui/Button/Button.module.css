@@ -1,40 +1,46 @@
 .button {
-    border-radius: 6px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.25s;
-    border: 1px solid var(--primary-color);
-    color: var(--white-color);
-    font-weight: 500;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
+  border-radius: 6px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.25s;
+  border: 1px solid var(--primary-color);
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .small {
-    padding: 7px 15px;
+  padding: 7px 15px;
 }
 
 .big {
-    text-transform: uppercase;
-    padding: 10px 27px;
+  text-transform: uppercase;
+  padding: 10px 27px;
+}
+
+.auth {
+  width: 300px;
+  height: 45px;
 }
 
 .accent {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 .accent:hover {
-    background: var(--primary-hover-color);
+  background: var(--primary-hover-color);
 }
 
 .big-white {
-    text-transform: uppercase;
-    padding: 10px 27px;
-    background: var(--white-color);
-    color: var(--primary-color);
+  text-transform: uppercase;
+  padding: 10px 27px;
+  background: var(--white-color);
+  color: var(--primary-color);
 }
 
 .big-white:hover {
-    color: var(--white-color);
+  color: var(--white-color);
 }
