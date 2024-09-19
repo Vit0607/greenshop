@@ -1,26 +1,40 @@
 .h1 {
-    font-size: 70px;
-    font-weight: 900;
-    color: var(--title-color);
-    text-transform: uppercase;
-    max-width: 530px;
-    line-height: 70px;
+  font-size: 70px;
+  font-weight: 900;
+  color: var(--title-color);
+  text-transform: uppercase;
+  max-width: 530px;
+  line-height: 70px;
 }
 
 .h1 span {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .h2 {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 16px;
-    color: var(--title-color);
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 16px;
+  color: var(--title-color);
 }
 
 .h3 {
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 16px;
-    color: var(--title-color);
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 16px;
+  color: var(--title-color);
+}
+
+.h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--title-color);
+}
+
+.h5 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 16px;
+  color: var(--title-color);
 }

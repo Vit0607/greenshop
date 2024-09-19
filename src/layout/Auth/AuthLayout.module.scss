@@ -1,0 +1,15 @@
+.layout {
+  padding: 60px 100px;
+}
+
+.switches {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+
+  * {
+    margin: 0;
+  }
+}

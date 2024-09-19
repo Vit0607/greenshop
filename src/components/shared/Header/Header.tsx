@@ -6,7 +6,7 @@ import SearchInput from '../Search/Search';
 import { linksMenuEn } from '../../../constants/links';
 import Modal from '../Modal/Modal';
 import { useState } from 'react';
-import { on } from 'events';
+import { AuthLayout } from '../../../layout/Auth/AuthLayout';
 
 export function Header() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -57,8 +57,7 @@ export function Header() {
         </div>
         {isModalOpen && (
           <Modal onClose={onClose}>
-            <h2>Заголовок модадки</h2>
-            <p>Содержимое модалки</p>
+            <AuthLayout />
           </Modal>
         )}
       </div>
