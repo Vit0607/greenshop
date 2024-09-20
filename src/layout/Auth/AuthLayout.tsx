@@ -1,22 +1,51 @@
-import { Outlet } from 'react-router-dom';
 import styles from './AuthLayout.module.scss';
-import Headling from '../../components/ui/Headling/Headling';
 import { Login } from '../../components/shared/Login/Login';
+import { Register } from '../../components/shared/Register/Register';
+import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 export function AuthLayout() {
+  const [isLoginOpen, setIsLoginOpen] = useState(true);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  const OnLogin = () => {
+    setIsLoginOpen(true);
+    setIsRegisterOpen(false);
+  };
+
+  const OnRegister = () => {
+    setIsLoginOpen(false);
+    setIsRegisterOpen(true);
+  };
+
+  if (isLoginOpen) {
+    console.log('Логин');
+  }
+
+  useEffect(() => {
+    setIsLoginOpen(true);
+  }, []);
+
   return (
     <div className={styles.layout}>
       <div className={styles.switches}>
-        <Headling level={4} classLevel={4}>
+        <div
+          className={cn(styles.tab, { [styles.active]: isLoginOpen })}
+          onClick={OnLogin}
+        >
           Login
-        </Headling>
+        </div>
         <span> | </span>
-        <Headling level={4} classLevel={4}>
+        <div
+          className={cn(styles.tab, { [styles.active]: isRegisterOpen })}
+          onClick={OnRegister}
+        >
           Register
-        </Headling>
+        </div>
       </div>
       <div className={styles.content}>
-        <Login />
+        {isLoginOpen && <Login />}
+        {isRegisterOpen && <Register />}
       </div>
     </div>
   );

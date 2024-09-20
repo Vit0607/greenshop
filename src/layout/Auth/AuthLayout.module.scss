@@ -7,11 +7,22 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  cursor: pointer;
   align-items: center;
   margin-bottom: 50px;
 
   * {
     margin: 0;
+  }
+
+  .tab {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--title-color);
+    cursor: pointer;
+
+    &.active {
+      color: green;
+    }
   }
 }
