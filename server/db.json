@@ -495,5 +495,11 @@
       "newArrival": true,
       "image": "/images/plant9.png"
     }
+  ],
+  "users": [
+    {
+      "email": "a@gmail.com",
+      "password": "123"
+    }
   ]
 }
